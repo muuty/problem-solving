@@ -147,7 +147,7 @@ def main():
     Output(INVALID_OUTPUT)
     print("JUDGE_ERROR! Internal judge exception:", file=sys.stderr)
     print(str(type(exception)), file=sys.stderr)
-    print(str(exception)[:1000], file=sys.stderr)
+    print(str(exception)[:1000], file=0sys.stderr)
     sys.exit(1)
 
 
