@@ -1,4 +1,3 @@
-
 def hhmmss2s(hhmmss):
     if hhmmss == '0':
         return 0
@@ -26,8 +25,8 @@ def solution(play_time, adv_time, logs):
     times = [0] * (play_time + 1)
     for log in logs:
         start_time, end_time = [hhmmss2s(time) for time in log.split("-")]
-        times[start_time] = 1
-        times[end_time] = -1
+        times[start_time] += 1
+        times[end_time] += -1
 
     for i in range(1, len(times)):
         times[i] = times[i] + times[i - 1]
@@ -48,6 +47,5 @@ def solution(play_time, adv_time, logs):
             max_start_time = i + 1
 
     return s2hhmmss(max_start_time)
-
 
 print(solution("02:03:55","00:14:15",["01:20:15-01:45:14", "00:40:31-01:00:00", "00:25:50-00:48:29", "01:30:59-01:53:29", "01:37:44-02:02:30"]	))
