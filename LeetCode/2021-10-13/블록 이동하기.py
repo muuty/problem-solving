@@ -5,7 +5,7 @@ def can_rotate(p1, p2, new_p1, new_p2, board):
     same = p1 if p1 == new_p1 else p2
     if is_available(new_p1, new_p2, board):
         print(new_p1, new_p2, same)
-        required = (new_p1[0] + new_p2[0] + p1[0] + p2[0] - 3*same[0], new_p1[1] + new_p2[1] + p1[0] + p2[0] - 3*same[1])
+        required = (new_p1[0] + new_p2[0] + p1[0] + p2[0] - 3*same[0], new_p1[1] + new_p2[1] + p1[1] + p2[1] - 3*same[1])
         print(required)
         if board[required[0]][required[1]] == 0:
             return True
